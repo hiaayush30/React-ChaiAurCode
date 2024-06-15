@@ -13,12 +13,12 @@ import { getData } from './components/Github.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route path='' element={<Home />} />
+      <Route path='home' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route 
       loader={getData}
-      path='github/' element={<Github />}>
-        <Route path=':userid' element={<User />} />
+      path='github' element={<Github />}>
+        <Route path='/:userid' element={<User />} />
       </Route>
     </Route>
   )
